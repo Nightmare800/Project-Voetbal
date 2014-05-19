@@ -1,6 +1,5 @@
 <?php  
 	require 'config/connect.php';
-	
 ?>
 
 <!doctype html>
