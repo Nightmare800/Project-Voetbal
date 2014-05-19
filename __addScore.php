@@ -85,7 +85,7 @@ WHERE  `team-poulewedstrijd`.`team_id` =  `teams`.`id` )";
         mysqli_close($con);       
 
         $message = urlencode('score succesvol toegevoegd');
-        header('location: selectwedstrijd.php?msg=' . $message );
+        header('location: selectWedstrijd.php?msg=' . $message );
 
 } else {
     echo 'Gegevens niet goed ingevoerd...';
