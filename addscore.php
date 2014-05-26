@@ -48,7 +48,7 @@ function getPlayers($con) {
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="http://bootswatch.com/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
     <style>
 		.labelMedium {
 			font-size: 2.5em;
