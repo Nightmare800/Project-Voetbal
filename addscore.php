@@ -47,8 +47,8 @@ function getPlayers($con) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
+    <title>Add score</title>
+    <link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
     <style>
 		.labelMedium {
 			font-size: 2.5em;
@@ -103,7 +103,7 @@ function getPlayers($con) {
 		    	<input type="number" name="score2" id="score2" class="inputBig">
 			</div>
 			
-			<input type="submit" name="update" value="update score">
+			<input type="submit" name="update" value="update score" class="btn btn-default">
 			
 			<div class="form-group">
 		    	<label class="labelMedium" for="winnaar" id="winnaar">winnaar</label>
@@ -118,7 +118,7 @@ function getPlayers($con) {
 			</div>
 
 	    	<input type="hidden" name="addScore" value="addscore">
-			<input type="submit" name="submit" value="Score vastleggen">
+			<input type="submit" name="submit" value="Score vastleggen" class="btn btn-default">
 	    </form>    
     </div>
   	<div class="col-md-4">

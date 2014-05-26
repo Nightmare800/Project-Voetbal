@@ -8,14 +8,14 @@
 	<script src="inc/jquery-1.11.0.js" type="text/javascript"></script>
 	<link rel='stylesheet' href='inc/style.css' type='text/css' />
 	<link rel="icon" href="inc/img/icon.gif" type="image/gif" />
-	<link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
+	<link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Voetbaltoernooi AMO1</title>
 </head>
 <body>
 	<div class="container">
 		<div class='page-header'>
-			<h1 class="text-center">Wie doet wat?</h1>
+			<h1 class="text-center">Live stream voetbaltoernooi AMO1</h1>
 		</div>
 
 		<div class="row">
