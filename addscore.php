@@ -95,12 +95,12 @@ function getPlayers($con) {
 			<legend>Eindscore</legend>
 			<div class="form-group">
 		        <label class="labelBig" for="score1"  id="score1"><?php echo $row['slot_1']; ?></label>
-		    	<input type="number" name="score1" id="score1" class="inputBig">
+		    	<input type="number" name="score1" id="score1" class="inputBig" value="0">
 			</div>
 			
 			<div class="form-group">
 		    	<label class="labelBig" for="score2" id="score2" name="score2"><?php echo $row['slot_2']; ?></label>
-		    	<input type="number" name="score2" id="score2" class="inputBig">
+		    	<input type="number" name="score2" id="score2" class="inputBig" value="0">
 			</div>
 			
 			<input type="submit" name="update" value="update score" class="btn btn-default">
@@ -125,7 +125,7 @@ function getPlayers($con) {
   		<h2>Nu speelt:</h2>
                 <table class="table">
                     <tbody class="nowplaying">
-                      
+                    
                     </tbody>
                 </table>
   	</div>
