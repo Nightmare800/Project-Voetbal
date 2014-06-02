@@ -19,7 +19,10 @@ if ( isset($_POST['update']) )
 
 // update final score
 if ( isset($_POST['addScore']) && (!empty($_POST['winnaar']) OR !empty($_POST['gelijk'])) && isset($_POST['submit']) ) {
-        
+        if ($_POST['score1']  < 0 OR $_POST['score2'] < 0) {
+            echo 'De score mag geen negatieve getallen hebben';
+            die();
+        }
         $score_slot_1 = mysqli_real_escape_string($con, trim($_POST['score1']));
         $score_slot_2 = mysqli_real_escape_string($con, trim($_POST['score2']));
         $winnaar = mysqli_real_escape_string($con, trim($_POST['winnaar']));
