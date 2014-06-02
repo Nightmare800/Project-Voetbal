@@ -94,16 +94,16 @@ function getPlayers($con) {
 	<?php
 		if(!empty($id)) {
 			echo '	<div class="score col-md-8">
-					    <form role="form" action="__addScore.php?id='.$id.'>" METHOD="POST">
+					    <form role="form" action="__addScore.php?id='.$id.'" METHOD="POST">
 							<legend>Eindscore</legend>
 							<div class="form-group">
 						        <label class="labelBig" for="score1"  id="score1">'.$row['slot_1'].'</label>
-						    	<input type="number" name="score1" id="score1" class="inputBig" value="0">
+						    	<input type="number" name="score1" min="0" max="100" id="score1" class="inputBig" value="0">
 							</div>
 							
 							<div class="form-group">
 						    	<label class="labelBig" for="score2" id="score2" name="score2">'.$row['slot_2'].'</label>
-						    	<input type="number" name="score2" id="score2" class="inputBig" value="0">
+						    	<input type="number" name="score2" min="0" max="100" id="score2" class="inputBig" value="0">
 							</div>
 							
 							<input type="submit" name="update" value="update score" class="btn btn-default">
