@@ -2,8 +2,12 @@
 // uitvoeren realTime functie
 realTime();
 
-
-
+$('#poule-a').load('stats/poule_a.php');
+$('#poule-b').load('stats/poule_b.php');  
+$('.topscorer').load('stats/topscorer.php');
+$('#wedstrijdschema').load('stats/wedstrijdschema.php');
+$('#gespeelde_wedstrijden').load('stats/gespeelde_wedstrijden.php');
+$('.nowplaying').load('stats/now_playing.php');
 
 function realTime() {
     setInterval(function() {

@@ -47,8 +47,8 @@ function getPlayers($con) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add score</title>
-    <link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://bootswatch.com/journal/bootstrap.min.css">
     <style>
 		.labelMedium {
 			font-size: 2.5em;
@@ -90,48 +90,42 @@ function getPlayers($con) {
 		$query = mysqli_query($con, $sql2);
 		$row = mysqli_fetch_assoc($query);
 	?>
+	<div class="score col-md-8">
+	    <form role="form" action="__addScore.php?id=<?php echo $id?>" METHOD="POST">
+			<legend>Eindscore</legend>
+			<div class="form-group">
+		        <label class="labelBig" for="score1"  id="score1"><?php echo $row['slot_1']; ?></label>
+		    	<input type="number" name="score1" id="score1" class="inputBig">
+			</div>
+			
+			<div class="form-group">
+		    	<label class="labelBig" for="score2" id="score2" name="score2"><?php echo $row['slot_2']; ?></label>
+		    	<input type="number" name="score2" id="score2" class="inputBig">
+			</div>
+			
+			<input type="submit" name="update" value="update score">
+			
+			<div class="form-group">
+		    	<label class="labelMedium" for="winnaar" id="winnaar">winnaar</label>
+				<?php echo $row['slot_1'] ?><input class="inputMedium" type="radio" name="winnaar" id="winnaar" value="<?php echo $row['slot_1'] ?>">
+				<?php echo $row['slot_2'] ?><input class="inputMedium" type="radio" name="winnaar" id="winnaar" value="<?php echo $row['slot_2'] ?>">
+			
+			</div>
+			
+			<div class="form-group">
+		    	<label class="labelMedium" for="gelijk" id="gelijk">gelijk</label>
+		    	<input type="checkbox" name="gelijk" id="gelijk">	
+			</div>
 
-	<?php
-		if(!empty($id)) {
-			echo '	<div class="score col-md-8">
-					    <form role="form" action="__addScore.php?id='.$id.'>" METHOD="POST">
-							<legend>Eindscore</legend>
-							<div class="form-group">
-						        <label class="labelBig" for="score1"  id="score1">'.$row['slot_1'].'</label>
-						    	<input type="number" name="score1" id="score1" class="inputBig" value="0">
-							</div>
-							
-							<div class="form-group">
-						    	<label class="labelBig" for="score2" id="score2" name="score2">'.$row['slot_2'].'</label>
-						    	<input type="number" name="score2" id="score2" class="inputBig" value="0">
-							</div>
-							
-							<input type="submit" name="update" value="update score" class="btn btn-default">
-							
-							<div class="form-group">
-						    	<label class="labelMedium" for="winnaar" id="winnaar">winnaar</label>
-								'.$row['slot_1'].'<input class="inputMedium" type="radio" name="winnaar" min="0" id="winnaar" value="'.$row['slot_1'].'">
-								'.$row['slot_2'].'<input class="inputMedium" type="radio" name="winnaar" id="winnaar" value="'.$row['slot_2'].'">
-							
-							</div>
-							
-							<div class="form-group">
-						    	<label class="labelMedium" for="gelijk" id="gelijk">gelijk</label>
-						    	<input type="checkbox" name="gelijk" id="gelijk">	
-							</div>
-
-					    	<input type="hidden" name="addScore" value="addscore">
-							<input type="submit" name="submit" value="Score vastleggen" class="btn btn-default">
-					    </form>    
-				    </div>';
-		}
-    ?>
-
+	    	<input type="hidden" name="addScore" value="addscore">
+			<input type="submit" name="submit" value="Score vastleggen">
+	    </form>    
+    </div>
   	<div class="col-md-4">
   		<h2>Nu speelt:</h2>
                 <table class="table">
                     <tbody class="nowplaying">
-                    
+                      
                     </tbody>
                 </table>
   	</div>

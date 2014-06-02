@@ -25,35 +25,69 @@
 			</p>
 		</div>
 		<div class="row">
-			<?php  
-			$sql = "SELECT * FROM poulewedstrijden";
-			
-			if ( !$query = mysqli_query($con, $sql) ) 
-			{
-				echo 'Kan de wedstrijden niet tonen';
-				exit();
-			}
+			<?php
+				if(empty($_GET['order'])){
+					$order = 'wedstrijdnr';
+				} else {
+					$order = $_GET['order'];
+				}
+
+				$sql = "SELECT * FROM `poulewedstrijden` ORDER BY `".$order."`";
+				
+				if ( !$query = mysqli_query($con, $sql) ) 
+				{
+					echo 'Kan de wedstrijden niet tonen';
+					exit();
+				}
 			?>
+
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Wedstrijdnr.</th>
+						<th>
+							<a href='?order=wedstrijdnr'>
+								Orderen bij wedstrijdnummer
+							</a>
+						</th>
+
+						<th>
+							<a href='?order=slot_1'>
+								Orderen bij slot 1
+							</a>
+						</th>
+
+						<th>
+						</th>
+
+						<th>
+							<a href='?order=slot_2'>
+								Orderen bij slot 2
+							</a>
+						</th>
+					</tr>
+				</thead>
+			</table>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Wedstrijdnummer</th>
 						<th>Slot 1</th>
 						<th></th>
 						<th>Slot 2</th>
 					</tr>
 				</thead>
+
 				<tbody>
 					<?php  
-					while ($row = mysqli_fetch_assoc($query) )
-					{
-						echo '<tr>';
-						echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['wedstrijdnr'] . '</a></td>';
-						echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['slot_1'] . '</a></td>';
-						echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '"> - </a></td>';
-						echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['slot_2'] . '</a></td>';
-						echo '</tr>'; 
-					}
+						while ($row = mysqli_fetch_assoc($query)) {
+							echo '<tr>';
+							echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['wedstrijdnr'] . '</a></td>';
+							echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['slot_1'] . '</a></td>';
+							echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '"> - </a></td>';
+							echo '<td><a href="addscore.php?id=' . $row['wedstrijdnr'] . '">' . $row['slot_2'] . '</a></td>';
+							echo '</tr>'; 
+						}
 					?>
 				</tbody>
 			</table>

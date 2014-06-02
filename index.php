@@ -18,7 +18,7 @@
 			<h1 class="text-center">Live stream voetbaltoernooi AMO1</h1>
 		</div>
 
-		<div class="row">
+		<div class='row'>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -26,15 +26,18 @@
 						<th>config</th>
 					</tr>
 				</thead>
+
 				<tbody>
 					<tr>
 						<td><a href="selectwedstrijd.php">Selecteer wedstrijden</a></td>
 						<td>selectwedstrijd.php</td>
 					</tr>
+
 					<tr>
 						<td><a href="addscore.php">Score toevoegen</a></td>
 						<td>addscore.php</td>
 					</tr>
+
 					<tr>
 						<td><a href="livestream.html">Live stream kijken</a></td>
 						<td>livestream.html</td>
@@ -42,7 +45,8 @@
 				</tbody>
 			</table>
 		</div>
-		<div class='footer'></div>
+
+	<div class='footer'></div>
 	</div><!-- Container End -->
 </body>
 </html>
