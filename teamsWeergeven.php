@@ -12,10 +12,11 @@
 		</title>
 	<link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
 </head>
-<body>
+
+<body style="background: #333;">
 	<div class="container">
 		<div class="page-header">
-			<h1 class="text-center">Selecteer wedstrijd Poule-fase</h1>
+			<h1 class="text-center" style='color: #fff'>Selecteer wedstrijd Poule-fase</h1>
 		</div>
 		<div class="row">
 			<?php  
@@ -26,18 +27,24 @@
 					exit();
 				}
 			?>
+
+			<a href='location:javascript://history.go(-1)'>
+				Ga terug
+			</a>
+
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Teamnaam</th>
-						<th>Gewonnen</th>
-						<th>Verloren</th>
-						<th>Gelijk</th>
-						<th>Poule</th>
-						<th>Punten</th>
+						<th style="color: #009cff">Teamnaam</th>
+						<th style="color: #009cff">Gewonnen</th>
+						<th style="color: #009cff">Verloren</th>
+						<th style="color: #009cff">Gelijk</th>
+						<th style="color: #009cff">Poule</th>
+						<th style="color: #009cff">Punten</th>
 					</tr>
 				</thead>
-				<tbody>
+				
+				<tbody style='background: #fff'>
 					<?php  
 					while ($row = mysqli_fetch_assoc($query) )
 					{
@@ -48,12 +55,12 @@
 						}
 
 						echo '<tr>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$row['naam'].'</a></td>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$row['gewonnen'].'</a></td>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$verloren.'</a></td>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$row['gelijk'].'</a></td>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$row['poule'].'</a></td>';
-						echo '<td><a href="displayTeam.php?id='.$row['id'].'">'.$row['totaal_punten'].'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$row['naam'].'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$row['gewonnen'].'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$verloren.'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$row['gelijk'].'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$row['poule'].'</a></td>';
+						echo '<td><a href="displayTeam.php?id='.$row['id'].'" style="color: #F50">'.$row['totaal_punten'].'</a></td>';
 						echo '</tr>'; 
 					}
 					?>
